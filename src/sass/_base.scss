@@ -11,7 +11,7 @@ $linkcolor: rgb(167, 132, 18);
 @mixin position($margin: false) {
     position:relative;
     top:80px;
-    width: 50%;
+    width: 70%;
     @if $margin {
         margin: 2rem auto;
     } @else {
@@ -42,4 +42,8 @@ $linkcolor: rgb(167, 132, 18);
 
 @mixin navbar{
     @media only screen and (min-width: 992px) {@content};
+}
+
+@mixin tablet{
+    @media only screen and (max-width: 992px) {@content};
 }

@@ -7,6 +7,9 @@
 
 .content{
     @include position;
+    display:flex;
+    justify-content: space-evenly;
+    
 }
 
 #img1{
@@ -41,8 +44,27 @@ p{
     color: darken($linkcolor, 20);
 }
 
+#content1{
+    margin-bottom: 1rem;
+    width: 45%;
+    
+}
+
+#content2{
+    @extend #content1;
+}
+
 @include phone{
     .content, .title {
         width: 80%;
+    }
+}
+
+@include tablet{
+    .content{
+        display: block;
+    }
+    #content1{
+        width: 100%;
     }
 }
