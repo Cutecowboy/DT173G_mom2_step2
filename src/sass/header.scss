@@ -57,6 +57,10 @@ nav {
     li:hover {
         background-color: $hover;
         cursor: pointer;
+        
+        a{
+            color: $boxcolor;
+        }
     }
 }
 
@@ -149,7 +153,7 @@ main p {
 /* Media querys */
 
 /* Större skärmas - gör menyn som inline */
-@media only screen and (min-width: 992px) {
+@include navbar {
     header {
         padding: 0 3em;
     }

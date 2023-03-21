@@ -23,3 +23,7 @@ footer a {
     color: $altcolor;
     font-style: italic;
 }
+
+footer a:hover{
+    color: darken($altcolor, 30);
+}

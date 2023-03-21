@@ -1,11 +1,12 @@
-// reducing DRY with mixins
 
 $background: rgb(119, 24, 24);
 $altcolor: white;
 $font: 1.2rem;
 $boxcolor: rgb(0, 0, 0);
-$hover:rgb(247, 204, 64);
 $active: orange;
+$hover: lighten($active, 15);
+
+// reducing DRY with mixins
 
 @mixin position($margin: false) {
     position:relative;
@@ -33,4 +34,12 @@ $active: orange;
         position: relative;
         top: -3px;
     }
+}
+
+@mixin phone{
+    @media only screen and (max-width: 600px) {@content};
+}
+
+@mixin navbar{
+    @media only screen and (min-width: 992px) {@content};
 }

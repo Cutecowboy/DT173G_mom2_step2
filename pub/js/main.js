@@ -1,0 +1,1 @@
+console.log("Hello to you!");let openBtn=document.getElementById("open-menu"),closeBtn=document.getElementById("close-menu");function toggleMenu(){let e=document.getElementById("nav-menu");"none"===window.getComputedStyle(e).display?e.style.display="block":e.style.display="none"}openBtn.addEventListener("click",toggleMenu),closeBtn.addEventListener("click",toggleMenu);

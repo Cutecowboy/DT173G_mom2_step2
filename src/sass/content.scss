@@ -9,11 +9,16 @@
     @include position;
 }
 
-img{
+#img1{
     width: 100%;
     margin: 1rem 0;
     max-width: 850px;
 }
+
+#img2 {
+    @extend #img1;
+}
+
 
 .cursive {
     font-style: italic;
@@ -24,8 +29,8 @@ p{
     font-size: 1.2rem;
 }
 
-@media only screen and (max-width: 600px)
-{
+
+@include phone{
     .content {
         width: 80%;
     }
