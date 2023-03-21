@@ -1,0 +1,36 @@
+// reducing DRY with mixins
+
+$background: rgb(119, 24, 24);
+$altcolor: white;
+$font: 1.2rem;
+$boxcolor: rgb(0, 0, 0);
+$hover:rgb(247, 204, 64);
+$active: orange;
+
+@mixin position($margin: false) {
+    position:relative;
+    top:80px;
+    width: 50%;
+    @if $margin {
+        margin: 2rem auto;
+    } @else {
+        margin: 0 auto;
+    }
+}
+
+@mixin cross($degree){
+
+    @if $degree == 45deg {
+        width: 25px;
+
+        transform: rotate(45deg);
+        position: relative;
+        top: 5px;
+    } @else {
+        width: 25px;
+
+        transform: rotate(135deg);
+        position: relative;
+        top: -3px;
+    }
+}

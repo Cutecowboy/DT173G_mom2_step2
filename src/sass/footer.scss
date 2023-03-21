@@ -1,0 +1,25 @@
+@import 'base';
+
+footer{
+    background-color: $background;
+    color: $altcolor;
+    font-size: $font;
+    text-align: center;
+    margin-top: 1rem;
+    position: relative;
+    top: 80px;
+}
+
+footer p{
+    padding-top: 1rem;
+
+}
+
+footer p:last-child{
+    padding-bottom: 1rem;
+}
+
+footer a {
+    color: $altcolor;
+    font-style: italic;
+}

@@ -1,0 +1,35 @@
+
+@import 'base';
+
+.title{
+    @include position($margin: true);
+}
+
+.content{
+    @include position;
+}
+
+img{
+    width: 100%;
+    margin: 1rem 0;
+    max-width: 850px;
+}
+
+.cursive {
+    font-style: italic;
+    font-weight: 800;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px)
+{
+    .content {
+        width: 80%;
+    }
+    .title {
+        width: 80%;
+    }
+}
