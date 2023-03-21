@@ -15,6 +15,10 @@
     max-width: 850px;
 }
 
+#img1:hover{
+    border-radius: 20%;
+}
+
 #img2 {
     @extend #img1;
 }
@@ -29,12 +33,16 @@ p{
     font-size: 1.2rem;
 }
 
+.pic-link{
+    color: $linkcolor;
+}
+
+.pic-link:hover{
+    color: darken($linkcolor, 20);
+}
 
 @include phone{
-    .content {
-        width: 80%;
-    }
-    .title {
+    .content, .title {
         width: 80%;
     }
 }

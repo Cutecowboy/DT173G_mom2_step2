@@ -4,6 +4,8 @@
     margin: 0;
 }
 
+
+
 /* Design av Header */
 header {
     height: 80px;
@@ -50,7 +52,7 @@ nav {
         width: 100%;
     }
     a {
-        color: white;
+        color: $altcolor;
         text-decoration: none;
         padding: 0 1em;
     }
@@ -80,7 +82,7 @@ nav {
 
 .menu-btn:hover {
     background-color: $hover;
-    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.421);
+    box-shadow: 0 0px 5px $boxcolor;
     border: $boxcolor solid 2px;
     .menu-text{
         color: $boxcolor;

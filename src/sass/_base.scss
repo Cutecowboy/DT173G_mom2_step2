@@ -5,7 +5,7 @@ $font: 1.2rem;
 $boxcolor: rgb(0, 0, 0);
 $active: orange;
 $hover: lighten($active, 15);
-
+$linkcolor: rgb(167, 132, 18);
 // reducing DRY with mixins
 
 @mixin position($margin: false) {
