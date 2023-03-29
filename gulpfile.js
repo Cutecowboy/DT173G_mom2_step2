@@ -1,5 +1,5 @@
 const {src, dest, parallel, series, watch} = require('gulp');
-const livereload = require('gulp-livereload');
+const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const cssnano = require('gulp-cssnano');
 const terser = require('gulp-terser');
@@ -33,7 +33,8 @@ function sassTask() {
     .pipe(concat('styles.css'))
     .pipe(cssnano())
     .pipe(sourcemaps.write())
-    .pipe(dest('pub/css'));
+    .pipe(dest('pub/css'))
+    .pipe(browserSync.stream());
 }
 
 // js tasks, concatinate JS files, minify and send to pub
@@ -54,20 +55,16 @@ function imageTask(){
 // watch function, watch for file changes, if so update the pub file with the changed file(s)
 
 function watchTask() {
-    watch([files.htmlPath, files.sassPath, files.jsPath, files.imagePath], parallel(copyHTML, sassTask, jsTask, imageTask))
-}
-
-// reload function, attempt at getting a liveserver i.e. when a edit is made the browser will automatically reload
-
-function reload() {
-    livereload.listen();
-    watch('pub/**').on('change', livereload.changed);
+    browserSync.init({
+        server: "./pub"
+    });
+    watch([files.htmlPath, files.sassPath, files.jsPath, files.imagePath], parallel(copyHTML, sassTask, jsTask, imageTask)).on("change", browserSync.reload);
 }
 
 // exports default, running gulp will run the following: if any edits are made it will update pub file(s), liveserver will run simantaneously and refresh the page
 
 exports.default = series(
     parallel(copyHTML, sassTask, jsTask, imageTask),
-    parallel(reload, watchTask)
+    parallel(watchTask)
     );
 
